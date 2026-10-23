@@ -348,5 +348,4 @@ Then export it from `src/components/index.js`, and add any styles as `src/styles
 ## License
 
 MIT License with attribution requirements. See [LICENSE.md](LICENSE.md).
-#   o d i u m - u i  
- 
+#
