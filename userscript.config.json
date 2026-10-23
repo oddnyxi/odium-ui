@@ -1,0 +1,15 @@
+{
+  "name": "Odium UI",
+  "namespace": "https://example.com/odium-ui",
+  "description": "Odium UI template userscript",
+  "author": "you",
+  "icon": "assets/icon-48.png",
+  "match": [
+    "*://*/*"
+  ],
+  "grant": [
+    "none"
+  ],
+  "run-at": "document-idle",
+  "noframes": true
+}

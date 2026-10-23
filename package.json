@@ -1,0 +1,30 @@
+{
+  "name": "odium-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependency-free in-page UI toolkit for userscripts: shadow-DOM window, tabs, 30+ controls, menus, modals and saved configs.",
+  "type": "module",
+  "scripts": {
+    "dev": "parcel serve dev/index.html --dist-dir .dev-dist --no-cache",
+    "clean": "node scripts/clean.js",
+    "build": "npm run clean && npm run build:lib && npm run build:userscript && node scripts/finalize.js",
+    "build:readable": "npm run clean && npm run build:lib -- --no-optimize && npm run build:userscript -- --no-optimize && node scripts/finalize.js",
+    "build:lib": "parcel build src/index.js --dist-dir dist/.lib --no-source-maps --no-cache",
+    "build:userscript": "parcel build src/userscript/main.js --dist-dir dist/.userscript --no-source-maps --no-cache",
+    "build:bun": "bun scripts/build-bun.js",
+    "icons": "python3 scripts/make-icons.py",
+    "screenshots": "bun scripts/build-bun.js --readable && bun scripts/screenshots.js"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Safari versions"
+  ],
+  "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.16.4",
+    "parcel": "^2.16.4"
+  },
+  "author": "Nyxi",
+  "license": "SEE LICENSE IN LICENSE.md"
+}
